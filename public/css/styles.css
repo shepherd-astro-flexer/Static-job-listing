@@ -1,0 +1,78 @@
+body {
+  background-color: hsl(180, 52%, 96%);
+}
+
+h4, h5, h6, p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+header {
+  background-image: url("../images/bg-header-desktop.svg");
+  background-repeat: no-repeat;
+  height: 120px; /* ! set a specific height */
+  background-size: 100% 100%; /* ! then set the background-size to both 100% */
+  background-color: hsl(180, 29%, 50%);
+}
+
+.image-container {
+  margin-right: 20px;
+}
+
+.logo {
+  width: 75px
+}
+
+.new {
+  background-color: hsl(180, 29%, 50%);
+}
+
+.featured {
+  background-color: hsl(180, 14%, 20%);
+}
+
+.condition {
+  padding: 4px;
+  color: white;
+  border-radius: 50px;
+}
+
+.type {
+  font-size: 0.8rem;
+  color: rgb(130, 128, 128)
+}
+
+.qualifications-container {
+  flex: 1;
+}
+
+.qualifications-container div {
+  display: flex;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills {
+  color: hsl(180, 29%, 50%);
+  background-color: hsl(180, 52%, 96%);
+  padding: 6px;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 0.7rem;
+  margin: 8px;
+}
+
+/* card */
+.card {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding : 20px 30px;
+  margin: 20px 150px;
+  box-shadow: 8px 16px 16px hsla(180, 35%, 76%, 0.495);
+  border-radius: 4px;
+}
+
