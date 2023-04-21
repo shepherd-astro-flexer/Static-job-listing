@@ -10,9 +10,13 @@ h4, h5, h6, p {
 header {
   background-image: url("../images/bg-header-desktop.svg");
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
   height: 120px; /* ! set a specific height */
   background-size: 100% 100%; /* ! then set the background-size to both 100% */
   background-color: hsl(180, 29%, 50%);
+  position: relative;
+  margin-bottom: 60px;
 }
 
 .image-container {
@@ -21,6 +25,13 @@ header {
 
 .logo {
   width: 75px
+}
+
+/* .title-container {
+} */
+
+.title {
+  margin: 0 4px;
 }
 
 .new {
@@ -39,7 +50,7 @@ header {
 
 .type {
   font-size: 0.8rem;
-  color: rgb(130, 128, 128)
+  color: rgb(130, 128, 128);
 }
 
 .qualifications-container {
@@ -65,6 +76,10 @@ header {
   margin: 8px;
 }
 
+.bullet {
+  margin: 0 10px;
+}
+
 /* card */
 .card {
   background-color: white;
@@ -74,5 +89,81 @@ header {
   margin: 20px 150px;
   box-shadow: 8px 16px 16px hsla(180, 35%, 76%, 0.495);
   border-radius: 4px;
+}
+
+.featured-border {
+  border-left: 4px solid hsl(180, 29%, 50%);
+}
+
+/* inputs */
+.tags-input {
+  background-color:hsl(180, 52%, 96%);
+  width: 80%;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  box-shadow: 8px 16px 16px hsla(180, 35%, 76%, 0.495);
+  padding: 20px;
+  border-radius: 6px;
+  position: absolute;
+  bottom: -20px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0 3px;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.chip-content, .remove-chip {
+  padding: 6px 8px;
+}
+
+.chip-content {
+  color: rgb(76, 162, 163);
+  background-color: rgb(215, 237, 244);
+  border-radius: 4px 0 0 4px;
+}
+
+.remove-chip {
+  background-color: rgb(76, 162, 163);
+  color: white;
+  border-radius: 0 4px 4px 0;
+  transition: all 0.15s;
+}
+
+.remove-chip:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.clear-button {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: bold;
+  transition: all 0.15s;
+  color: rgb(128, 124, 124);
+}
+
+.clear-button:hover {
+  text-decoration: underline rgb(76, 162, 163);
+  color: rgb(76, 162, 163);
+  cursor: pointer;
+}
+
+input[type=text] {
+  width: 100%;
+  border: none;
+  outline: none;
 }
 
