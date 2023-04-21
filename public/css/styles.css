@@ -110,6 +110,10 @@ header {
   bottom: -20px;
 }
 
+.tags-input:focus {
+  outline: 1px solid blue;
+}
+
 ul {
   list-style-type: none;
   display: flex;

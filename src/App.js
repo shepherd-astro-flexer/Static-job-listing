@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import data from "./data.json"; // Ohh, so we need to import it also
 
 function App() {
-   const [search, setState] = useState("");
-   const [chip, setChip] = useState(["Javascript", "React"]);
+  //  const [search, setState] = useState("");
+   const [chip, setChip] = useState([]);
 
    const updateChip = (e) => {
     const value = e.target.value;
@@ -41,8 +41,11 @@ function App() {
         </div>
       </header>
       {data.filter(item => {
-        const lowerCaseLanguage = item.languages.map(language => language.toLowerCase());
-        return search.toLowerCase() === "" ? item : lowerCaseLanguage.some(language => language.includes(search.toLowerCase()));
+        {/* ! We are CHAINING array callback methods here. So what we filtered through the filter method are the only ones that gets rendered by the map method */}
+        const lowerCaseLanguage = item.languages.map(language => language.toLowerCase()); // We just map through the array and return a lowercase version of it
+        const lowerCaseChip = chip.map(item => item.toLowerCase());
+        
+        return !lowerCaseChip ? item : lowerCaseChip.every(chip => lowerCaseLanguage.includes(chip));
       }).map((item, index) => {
         return (
           <div className={`card ${item.featured && "featured-border"}`}>
@@ -81,6 +84,26 @@ function App() {
     </div>
   );
 }
+
+{/* .filter(item => {
+        const lowerCaseLanguage = item.languages.map(language => language.toLowerCase()); // We just map through the array and return a lowercase version of it
+        const lowerCaseChip = chip.map(item => item.toLowerCase());
+        // ! if it returns true, it will keep the data. False will remove it to the list
+        return lowerCaseChip.length >= 2 ? lowerCaseChip.every(chip => {
+          return lowerCaseLanguage.map(language => {
+            return language.includes(chip)
+          }) 
+        }) : item;
+      }) */}
+
+// lowerCaseLanguage.filter(language => {
+//   return lowerCaseChip.filter(item => {
+//     return language === item;
+//   })
+// })
+
+{/* return !lowerCaseChip  && item ; */}
+{/* return lowerCaseChip ? item : lowerCaseLanguage.some(language => language.includes(search.toLowerCase())); */}
 
 // item.languages.filter(language => {
 //   return search.toLowerCase() === "" ? language : language.toLowerCase().includes(search);
